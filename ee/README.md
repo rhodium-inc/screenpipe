@@ -8,6 +8,7 @@ The code in this directory is licensed under the [Screenpipe Enterprise License]
 
 - **License key authentication** - replaces user login for IT-managed deployments
 - **Admin policy enforcement** - centralized lockable settings pushed by admins
+- **Enterprise update management** - Intune/MDM detection and Screenpipe-managed update policy
 - **Enterprise UI controls** - hides consumer UI (billing, login, updates) in managed environments
 
 ## What's NOT in here (stays open source)

@@ -255,6 +255,9 @@ async getBootPhase() : Promise<BootPhaseSnapshot> {
 async isEnterpriseBuildCmd() : Promise<boolean> {
     return await TAURI_INVOKE("is_enterprise_build_cmd");
 },
+async getEnterpriseInstallMetadata() : Promise<EnterpriseInstallMetadata> {
+    return await TAURI_INVOKE("get_enterprise_install_metadata");
+},
 /**
  * Add or remove the "Cloud audio + video + image analysis" section in
  * `~/.claude/skills/screenpipe-api/SKILL.md`.
@@ -1351,6 +1354,7 @@ export type CalendarStatus = { available: boolean; authorized: boolean; authoriz
 export type ChatGptOAuthStatus = { logged_in: boolean }
 export type Credits = { amount: number }
 export type EmbeddedLLM = { enabled: boolean; model: string; port: number }
+export type EnterpriseInstallMetadata = { install_source: string; update_manager: string; managed: boolean; detected_by: string[] }
 export type HardwareCapability = { hasGpu: boolean; cpuCores: bigint; totalMemoryGb: number; recommendedEngine: string; reason: string }
 export type IcsCalendarEntry = { name: string; url: string; enabled: boolean }
 export type JsonValue = null | boolean | number | string | JsonValue[] | { [key in string]: JsonValue }
